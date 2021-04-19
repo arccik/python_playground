@@ -14,13 +14,9 @@
 # kit.servo[2].angle = ???          // middle right servo (up, down)
 # kit.servo[3].angle = ???          // tongs servo (open, close)
 
-#  converting one range to other range
-# new_value = ( (old_value - old_min) / (old_max - old_min) ) * (new_max - new_min) + new_min
-# new_value = ( (50 - 90) / (180 - 90) ) * (100 - 0) + 0
-# (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 
-# convert the range of input values to match the servos range
-# acceptiong from 0 to 100 for any servo
+# convert the range of input values(0 to 100)  to match the servos range (0, 90) or (90, 180)
+# acceptiong values from 0 to 100 and return 0 to 180
 def rangeConverter(value, in_min=0, in_max=100, out_min=90, out_max=180):
     return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
